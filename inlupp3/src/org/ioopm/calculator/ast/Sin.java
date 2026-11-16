@@ -5,4 +5,8 @@ public class Sin extends Unary {
     public Sin(SymbolicExpression tree) {
         super(tree);
     }
+
+    public String getName() {
+        return "sin";
+    }
 }

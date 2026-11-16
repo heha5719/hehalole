@@ -5,4 +5,8 @@ public class Negation extends Unary {
     public Negation(SymbolicExpression tree) {
         super(tree);
     }
+
+    public String getName() {
+        return "-";
+    }
 }

@@ -5,4 +5,8 @@ public class Log extends Unary {
     public Log(SymbolicExpression tree) {
         super(tree);
     }
+
+    public String getName() {
+        return "log";
+    }
 }

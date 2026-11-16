@@ -5,4 +5,8 @@ public class Exp extends Unary {
     public Exp(SymbolicExpression tree) {
         super(tree);
     }
+
+    public String getName() {
+        return "exp";
+    }
 }
