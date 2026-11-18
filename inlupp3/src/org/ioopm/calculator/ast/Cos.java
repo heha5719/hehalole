@@ -6,6 +6,10 @@ public class Cos extends Unary {
         super(tree);
     }
 
+    public int getPriority() {
+        return 200;
+    }
+
     public String getName() {
         return "cos";
     }

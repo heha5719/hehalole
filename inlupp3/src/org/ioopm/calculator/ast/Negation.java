@@ -9,6 +9,11 @@ public class Negation extends Unary {
     public String getName() {
         return "-";
     }
+
+
+    public int getPriority() {
+        return 100;
+    }
 /*
     public String toString() {
         return

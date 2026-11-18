@@ -11,9 +11,8 @@ public class Exp extends Unary {
     }
 
     public int getPriority() {
-        return 0;
+        return 100;
     }
-    
 
     public SymbolicExpression eval(Environment vars) {
     SymbolicExpression arg = this.getTree().eval(vars);

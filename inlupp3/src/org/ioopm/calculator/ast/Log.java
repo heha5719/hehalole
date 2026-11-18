@@ -11,7 +11,7 @@ public class Log extends Unary {
     }
 
     public int getPriority() {
-        return 0;
+        return 50;
     }
 
     public SymbolicExpression eval(Environment vars) {

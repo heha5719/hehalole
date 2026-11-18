@@ -18,7 +18,7 @@ public abstract class Binary extends SymbolicExpression {
             if (rhs.getPriority() < this.getPriority()) {
                 return "(" + this.lhs.toString() + ") " + this.getName() + " (" + this.rhs.toString() + ")";
             }
-            return "(" + this.lhs.toString() + ") " + this.getName() + "  " + this.rhs.toString();
+            return "(" + this.lhs.toString() + ") " + this.getName() + " " + this.rhs.toString();
         }
         else if (rhs.getPriority() < this.getPriority()) {
             return this.lhs.toString() + " " + this.getName() + " (" + this.rhs.toString() + ")";

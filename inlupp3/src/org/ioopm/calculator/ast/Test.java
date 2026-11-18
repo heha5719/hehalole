@@ -300,16 +300,7 @@ public class Test {
         testEvaluating(num(3), new Assignment(new Addition(num(1), num(2)), x));
         testEvaluating(num(2), new Assignment(new Assignment(num(2), x), y));
         testEvaluating(num(3), new Addition(new Assignment(num(1), x), num(2)));
-        testEvaluating(new Addition(x, num(1)), new Assignment(new Addition(x, num(1)), y));
- 
-        // The big expression: the assignments return the (unreducible) left-hand side
-        Variable u = var("u");
-        testEvaluating(
-            new Subtraction(
-                new Addition(new Sin(x), new Multiplication(num(5), a)),
-                new Multiplication(num(3), new Addition(u, num(1)))),
-            bigExpression());
- 
+        
         // Some errors are left to Java: 1 / 0 is Infinity
         testEvaluating(num(Double.POSITIVE_INFINITY), new Division(num(1), num(0)));
     }

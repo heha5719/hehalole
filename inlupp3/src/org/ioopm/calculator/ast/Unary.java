@@ -8,9 +8,13 @@ public abstract class Unary extends SymbolicExpression {
     }
 
     public String toString() {
-    /// Note how the call to toString() is not necessary
-    return this.getName() + " " + this.tree.toString();
-    }
+        String tree = this.tree.toString();
+        if (this.tree.getPriority() < this.getPriority()) {
+            tree = "(" + tree + ")";
+        }
+        return this.getName() + " " + tree;
+        }
+
 
     public int getPriority() {
         return 0;
@@ -23,7 +27,7 @@ public abstract class Unary extends SymbolicExpression {
         return false;
     }
     }
-
+    
     public SymbolicExpression getTree() {
         return this.tree;
     }

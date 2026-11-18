@@ -6,12 +6,12 @@ public class Sin extends Unary {
         super(tree);
     }
 
-    public String getName() {
-        return "sin";
+    public int getPriority() {
+        return 200;
     }
 
-    public int getPriority() {
-        return 0;
+    public String getName() {
+        return "sin";
     }
 
     public SymbolicExpression eval(Environment vars) {
