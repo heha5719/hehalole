@@ -8,10 +8,40 @@ public abstract class Binary extends SymbolicExpression {
         this.lhs = lhs;
         this.rhs = rhs;
     }
-    public String toString() {
-        return this.lhs.toString() + " " + this.getName() + " " + this.rhs.toString();
+
+    protected boolean isAssociative() {
+    return true; 
     }
 
+    public String toString() {
+        if (lhs.getPriority() < this.getPriority()) {
+            if (rhs.getPriority() < this.getPriority()) {
+                return "(" + this.lhs.toString() + ") " + this.getName() + " (" + this.rhs.toString() + ")";
+            }
+            return "(" + this.lhs.toString() + ") " + this.getName() + "  " + this.rhs.toString();
+        }
+        else if (rhs.getPriority() < this.getPriority()) {
+            return this.lhs.toString() + " " + this.getName() + " (" + this.rhs.toString() + ")";
+        }
+        else {
+            return this.lhs.toString() + " " + this.getName() + " " + this.rhs.toString();
+        }
+    }
+
+
+
+    public int getPriority() {
+        return 100;
+    }
+
+    public SymbolicExpression getLhs() {
+        return this.lhs;
+    }
+
+    public SymbolicExpression getRhs() {
+        return this.rhs;
+    }
+    
     
     public boolean equals(Object other) {
         if (other instanceof Binary) {
@@ -22,7 +52,6 @@ public abstract class Binary extends SymbolicExpression {
     }
 
     public boolean equals(Binary other) {
-        /// access a private field of other!
         return this.getName().equals(other.getName()) && 
         this.lhs.equals(other.lhs) && 
         this.rhs.equals(other.rhs);

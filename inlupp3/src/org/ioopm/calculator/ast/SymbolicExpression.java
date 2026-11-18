@@ -6,6 +6,14 @@ public boolean isConstant() {
     return false;
 }
 
+public boolean isVariable() {
+    return false;
+}
+
+public boolean isCommand() {
+    return false;
+}
+
 public double getValue() {
     throw new RuntimeException("getValue() called on expression with no constant");
 }
@@ -18,7 +26,6 @@ public int getPriority() {
     return 0;
 }
 
-public SymbolicExpression eval() {
-    return null;
-}
+public abstract SymbolicExpression eval(Environment vars); 
+    
 }

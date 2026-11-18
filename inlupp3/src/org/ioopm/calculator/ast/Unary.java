@@ -11,12 +11,21 @@ public abstract class Unary extends SymbolicExpression {
     /// Note how the call to toString() is not necessary
     return this.getName() + " " + this.tree.toString();
     }
+
+    public int getPriority() {
+        return 0;
+    }
+    
     public boolean equals(Object other) {
     if (other instanceof Unary) {
         return this.equals((Unary) other);
     } else {
         return false;
     }
+    }
+
+    public SymbolicExpression getTree() {
+        return this.tree;
     }
 
     public boolean equals(Unary other) {
